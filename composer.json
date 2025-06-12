@@ -17,7 +17,7 @@
         "ext-simplexml": "*",
         "ecphp/ecas": "^3.0",
         "ecphp/laravel-cas": "^1.1",
-        "laravel/framework": "^9 || ^10 || ^11"
+        "laravel/framework": "^9 || ^10 || ^11 || ^12"
     },
     "require-dev": {
         "ecphp/php-conventions": "^1.0",
