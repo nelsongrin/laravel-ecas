@@ -47,15 +47,6 @@ final class LaravelEcasProvider extends ServiceProvider
             PropertiesInterface::class,
             static fn (PropertiesInterface $service): EcasProperties => new EcasProperties($service)
         );
-
-        // $this->app->extend(
-        //     Fingerprint::class,
-        //     static fn (Fingerprint $service): DefaultFingerprint => new DefaultFingerprint($service)
-        // );
-        // $this->app->extend(
-        //     CasInterface::class,
-        //     static fn (CasInterface $service, Application $app): Ecas => new Ecas($service, $app->make(PropertiesInterface::class), $app->make(Psr17Interface::class), $app->make(CasResponseBuilderInterface::class), $app->make(ClientInterface::class), $app->make(DefaultFingerprint::class))
-        // );
         $this->app->bind(
             Psr17Interface::class,
             function (Application $app): Psr17Interface
