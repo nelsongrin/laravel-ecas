@@ -8,13 +8,13 @@ An ECAS bundle for Laravel.
     composer require ecphp/laravel-ecas
 ```
 
-`config/app.php`
+`bootstrap/providers.php`
 
 ```php
-    'providers'       => [
+    return [
         ...
         EcPhp\LaravelEcas\Providers\LaravelEcasProvider::class,
-    ],
+    ];
 ```
 
 `app/Providers/AppServiceProvider.php`
