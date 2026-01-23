@@ -14,7 +14,6 @@ namespace EcPhp\LaravelEcas\Tests\Unit;
 use EcPhp\CasLib\Contract\CasInterface;
 use EcPhp\Ecas\Ecas;
 use EcPhp\LaravelEcas\Tests\TestCase;
-use Illuminate\Contracts\Container\BindingResolutionException;
 
 /**
  * @internal

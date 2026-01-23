@@ -11,17 +11,13 @@ declare(strict_types=1);
 
 namespace EcPhp\LaravelEcas\Providers;
 
-use EcPhp\CasLib\Contract\CasInterface;
 use EcPhp\CasLib\Contract\Configuration\PropertiesInterface;
-use EcPhp\Ecas\Ecas;
 use EcPhp\Ecas\EcasProperties;
 use EcPhp\LaravelCas\Auth\CasUserProvider;
 use EcPhp\LaravelEcas\Auth\EcasUserProvider;
 use Illuminate\Contracts\Auth\UserProvider;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
-use loophp\psr17\Psr17Interface;
 
 final class LaravelEcasProvider extends ServiceProvider
 {
@@ -38,10 +34,6 @@ final class LaravelEcasProvider extends ServiceProvider
         $this->app->extend(
             PropertiesInterface::class,
             static fn (PropertiesInterface $service): EcasProperties => new EcasProperties($service)
-        );
-        $this->app->extend(
-            CasInterface::class,
-            static fn (CasInterface $service, Application $app): Ecas => new Ecas($service, $app->make(PropertiesInterface::class), $app->make(Psr17Interface::class))
         );
     }
 }
